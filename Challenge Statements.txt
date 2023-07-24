@@ -1,8 +1,33 @@
 CHALLENGE STATEMENT :
 ********************
 
-A. ORDER BY AND JOIN
+A. ORDER BY
 
- 1. Using SQL, list all the songs so that the songs from the same album appear together in track order.
+	1. Using SQL, list all the songs so that the songs from the same album appear together in track order.
 
- >> SELECT * FROM songs ORDER BY album, track;
+		>> SELECT * FROM songs ORDER BY album, track;
+ 
+B. JOIN
+	1. A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+		>> 
+		
+		
+FOREIGN KEY CHECKS:
+*******************
+SET foreign_key_checks = 0;  //To disable referential integrity.
+SET foreign_key_checks = 1;   //To enable referential integrity.
+
+		
+		
+ADDING FOREIGN KEY:
+*******************
+ALTER TABLE songs ADD INDEX par_ind ( album ); 
+ALTER TABLE songs ADD CONSTRAINT fk_album
+FOREIGN KEY ( album ) REFERENCES albums ( _id ) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE albums ADD INDEX par_ind ( artist ); 
+ALTER TABLE albums ADD CONSTRAINT fk_artist
+FOREIGN KEY ( artist ) REFERENCES artists ( _id ) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
