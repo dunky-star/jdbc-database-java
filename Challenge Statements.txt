@@ -9,7 +9,8 @@ A. ORDER BY
  
 B. JOIN
 	1. A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
-		>> 
+		>> SELECT track, title, album FROM songs INNER JOIN albums ON songs.album = albums._id limit 10;
+		
 		
 		
 FOREIGN KEY CHECKS:
@@ -28,6 +29,14 @@ FOREIGN KEY ( album ) REFERENCES albums ( _id ) ON DELETE CASCADE ON UPDATE CASC
 ALTER TABLE albums ADD INDEX par_ind ( artist ); 
 ALTER TABLE albums ADD CONSTRAINT fk_artist
 FOREIGN KEY ( artist ) REFERENCES artists ( _id ) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+		
+SHOW CREATE TABLE songs;  // To check all constraints on a table.
+
+SELECT TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
+FROM information_schema.table_constraints
+WHERE table_name='songs';
 
 
 
