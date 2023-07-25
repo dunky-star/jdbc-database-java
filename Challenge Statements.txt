@@ -96,3 +96,8 @@ ALTER TABLE albums RENAME COLUMN name TO album_name;
 ALTER TABLE artists RENAME COLUMN name TO artist_name; 
 
 
+VIEWS:
+*******
+SHOW FULL TABLES;
+
+
