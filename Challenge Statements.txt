@@ -13,18 +13,20 @@ B. JOIN
 		>> SELECT track, title, album FROM songs INNER JOIN albums ON songs.album = albums._id limit 10;
 		
 		>> SELECT albums.name, artists.name FROM albums, artists WHERE albums.artist = artists._id limit 10;
-		
-		>> SELECT A.album_name, B.artist_name
-           FROM albums AS A
-           INNER JOIN artists AS B
-           ON B._id = A.artist LIMIT 40;
 		   
 		>> SELECT songs.track, songs.title AS song_title, albums.album_name 
 		   FROM songs INNER JOIN albums 
 		   ON songs.album = albums._id ORDER BY albums.album_name, songs.track LIMIT 40;
 		
 		
+C: MININ CHALLENGE:
+	1. Produce a list of artists, with their albums, in alphabetical order of artists name.
 		
+		>> SELECT A.artist_name, B.album_name
+           FROM albums AS B
+           INNER JOIN artists AS A
+           ON A._id = B.artist ORDER BY A.artist_name LIMIT 40;
+		   
 		
 FOREIGN KEY CHECKS:
 *******************
