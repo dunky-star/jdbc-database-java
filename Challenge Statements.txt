@@ -45,8 +45,10 @@ C: MINI CHALLENGE:
 		   ORDER BY artist_name, album_name, songs.track LIMIT 100;
 		   
 
-VIEWS IN MySQL:
+VIEWS IN MySQL: 
 ****************
+A view is a virtual table based on the result-set of an SQL statement. 
+A view contains rows and columns, just like a real table.
 
 		CREATE VIEW artist_list AS
 		   SELECT artists.artist_name, albums.album_name, songs.title AS song_title, songs.track 
@@ -55,6 +57,9 @@ VIEWS IN MySQL:
 		   INNER JOIN artists ON albums.artist = artists._id 
 		   WHERE songs.title LIKE "%doctor%"
 		   ORDER BY artist_name, album_name, songs.track LIMIT 100;
+		   
+		   
+		SELECT * FROM artist_list;    // To display the view
 
 	
 	
