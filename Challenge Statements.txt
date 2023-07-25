@@ -20,8 +20,8 @@ B. JOIN
            ON B._id = A.artist LIMIT 40;
 		   
 		>> SELECT songs.track, songs.title AS song_title, albums.album_name 
-		   FROM songs JOIN albums 
-		   ON songs.album = albums._id limit 40;
+		   FROM songs INNER JOIN albums 
+		   ON songs.album = albums._id ORDER BY albums.album_name, songs.track LIMIT 40;
 		
 		
 		
