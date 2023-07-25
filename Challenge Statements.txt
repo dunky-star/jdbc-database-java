@@ -9,8 +9,19 @@ A. ORDER BY
  
 B. JOIN
 	1. A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+	
 		>> SELECT track, title, album FROM songs INNER JOIN albums ON songs.album = albums._id limit 10;
+		
 		>> SELECT albums.name, artists.name FROM albums, artists WHERE albums.artist = artists._id limit 10;
+		
+		>> SELECT A.album_name, B.artist_name
+           FROM albums AS A
+           INNER JOIN artists AS B
+           ON B._id = A.artist LIMIT 40;
+		   
+		>> SELECT songs.track, songs.title AS song_title, albums.album_name 
+		   FROM songs JOIN albums 
+		   ON songs.album = albums._id limit 40;
 		
 		
 		
