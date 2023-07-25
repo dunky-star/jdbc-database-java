@@ -56,10 +56,13 @@ A view contains rows and columns, just like a real table.
            INNER JOIN albums ON songs.album = albums._id 
 		   INNER JOIN artists ON albums.artist = artists._id 
 		   WHERE songs.title LIKE "%doctor%"
-		   ORDER BY artist_name, album_name, songs.track LIMIT 100;
+		   ORDER BY artist_name, album_name, songs.track;
+		   
+		
 		   
 		   
 		SELECT * FROM artist_list;    // To display the view
+		SELECT * FROM artist_list WHERE artist_name LIKE "jefferson%";
 
 	
 	
@@ -99,5 +102,8 @@ ALTER TABLE artists RENAME COLUMN name TO artist_name;
 VIEWS:
 *******
 SHOW FULL TABLES;
+
+SHOW FULL TABLES 
+WHERE table_type = 'VIEW';
 
 
