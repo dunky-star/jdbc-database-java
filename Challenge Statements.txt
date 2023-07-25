@@ -27,6 +27,13 @@ C: MININ CHALLENGE:
            INNER JOIN artists AS A
            ON A._id = B.artist ORDER BY A.artist_name LIMIT 40;
 		   
+	2. Produce a list of artists, with their albums and songs, in alphabetical order of artists name.
+	
+		>> SELECT artists.artist_name, albums.album_name, songs.title AS song_title
+           FROM songs
+           INNER JOIN albums ON songs.album = albums._id 
+		   INNER JOIN artists ON albums.artist = artists._id ORDER BY artist_name LIMIT 40;
+		   
 		
 FOREIGN KEY CHECKS:
 *******************
