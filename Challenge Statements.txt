@@ -43,6 +43,8 @@ C: MINI CHALLENGE:
 		   INNER JOIN artists ON albums.artist = artists._id 
 		   WHERE songs.title LIKE "%doctor%"
 		   ORDER BY artist_name, album_name, songs.track LIMIT 100;
+	
+	4. SELECT COUNT(DISTINCT song_title) FROM artist_list WHERE album_name = "Dragon Fly";
 		   
 
 VIEWS IN MySQL: 
