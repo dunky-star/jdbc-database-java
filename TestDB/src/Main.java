@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -10,8 +7,19 @@ public class Main {
             Connection conn = DriverManager.getConnection(DBConnectParams.connection,
                     DBConnectParams.user, DBConnectParams.password);
             Statement statement = conn.createStatement();
+            // statement.execute("INSERT INTO artists(_id, artist_name) VALUES (202, 'Okeng Kin Gang')");
+            statement.execute("DELETE FROM artists WHERE _id=202");
             statement.execute("SELECT COUNT(DISTINCT song_title) FROM " +
                     "artist_list WHERE album_name = \"Dragon Fly\"");
+
+            statement.execute("SELECT * FROM songs ORDER BY album, track LIMIT 40" );
+            ResultSet results = statement.getResultSet();
+            while(results.next()){
+                System.out.println(results.getString("title") + " "
+                        + "album");
+            }
+            results.close();
+
 
             statement.close();
             conn.close();
