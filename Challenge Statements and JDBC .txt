@@ -109,3 +109,11 @@ SHOW FULL TABLES
 WHERE table_type = 'VIEW';
 
 
+
+JDBC:
+*****
+*****
+Using JDBC, we cannot only work with databases but also spreadsheets and flat files. JDBC acts as a middleman between
+a Java application and the datasource. To use a particular datasource from an application, we need JDBC driver for the data source.
+
+
