@@ -115,5 +115,7 @@ JDBC:
 *****
 Using JDBC, we cannot only work with databases but also spreadsheets and flat files. JDBC acts as a middleman between
 a Java application and the datasource. To use a particular datasource from an application, we need JDBC driver for the data source.
+The driver is simply a Java library containing classes that implement the JDBC API. Because all JDBC drivers implement the same interface,
+it's not difficult to change the data source of an application uses.
 
 
