@@ -9,9 +9,6 @@ public class Main {
             Connection conn = DriverManager.getConnection(DBConnectParams.connection,
                     DBConnectParams.user, DBConnectParams.password);
 
-            if (!conn.isClosed()) {
-                conn.close();
-            }
 
         }catch(SQLException e){
             System.out.println("Something went wrong: " +e.getMessage() );
