@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         try{
             // Class.forName(DBConnectParams.driver); Old method of loading class and not necessary anymore.
-            Connection conn = DriverManager.getConnection(DBConnectParams.connection,
-                    DBConnectParams.user, DBConnectParams.password);
+            Connection conn = DriverManager.getConnection(DBConnectParams.CONNECTION,
+                    DBConnectParams.USER, DBConnectParams.PASSWORD);
             Statement statement = conn.createStatement();
             // statement.execute("INSERT INTO artists(_id, artist_name) VALUES (202, 'Okeng Kin Gang')");
             statement.execute("DELETE FROM artists WHERE _id=202");
