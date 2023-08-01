@@ -12,14 +12,16 @@ public class Main {
             statement.execute("SELECT COUNT(DISTINCT song_title) FROM " +
                     "artist_list WHERE album_name = \"Dragon Fly\"");
 
-            statement.execute("SELECT * FROM songs ORDER BY album, track LIMIT 40" );
-            ResultSet results = statement.getResultSet();
+           //  statement.execute("SELECT * FROM songs ORDER BY album, track LIMIT 40" );
+            // ResultSet results = statement.getResultSet();
+            ResultSet results = statement.executeQuery("SELECT * FROM songs ORDER BY album, track LIMIT 40" );
+
             while(results.next()){
                 System.out.println(results.getString("title") + " "
                         + results.getString("album"));
             }
-            results.close();
 
+            results.close();
             statement.close();
             conn.close();
 
