@@ -6,4 +6,9 @@ public class Datasource {
     public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + DB_NAME;
     public static final String USER = "student";
     public static final String PASSWORD = "cluster@1";
+
+    public static final String TABLE_ALBUMS = "albums";
+    public static final String TABLE_SONGS = "songs";
+    public static final String TABLE_ARTISTS = "artists";
+    public static final String TABLE_ARTISTS_LIST = "artist_list";
 }
