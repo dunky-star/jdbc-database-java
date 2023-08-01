@@ -16,10 +16,9 @@ public class Main {
             ResultSet results = statement.getResultSet();
             while(results.next()){
                 System.out.println(results.getString("title") + " "
-                        + "album");
+                        + results.getString("album"));
             }
             results.close();
-
 
             statement.close();
             conn.close();
