@@ -76,6 +76,6 @@ public class Datasource {
             return null;
         }
 
-    }
+    } // End of method queryArtists
 
 } // End of class
