@@ -55,15 +55,14 @@ public class Datasource {
 
     // Methods to Querying DB tables.
     public List<Artist> queryArtists(){
-        Statement statement = null;
+
         ResultSet results = null;
 
-        try{
-            statement = conn.createStatement();
+        try (Statement statement = conn.createStatement()) {
             results = statement.executeQuery("SELECT * FROM " + TABLE_ARTISTS);
 
             List<Artist> artists = new ArrayList<>();
-            while(results.next()){
+            while (results.next()) {
                 Artist artist = new Artist();
                 artist.setId(results.getInt(COLUMN_ARTIST_ID));
                 artist.setName(results.getString(COLUMN_ARTIST_NAME));
@@ -72,18 +71,11 @@ public class Datasource {
 
             return artists;
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println("Query failed: " + e.getMessage());
             return null;
-        } finally{
-            try{
-                if(statement != null){
-                    statement.close();
-                }
-            }catch(SQLException e){
-                // later code
-            }
         }
+
 
     }
 
