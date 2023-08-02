@@ -1,8 +1,7 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.List;
 
 public class Datasource {
     // protected static String driver = "com.mysql.cj.jdbc.Driver";
@@ -29,7 +28,7 @@ public class Datasource {
     public static final String TABLE_ARTISTS_LIST = "artist_list";
 
     private Connection conn;
-    // Opening database resource connection
+    // Method to open database resource connection.
     public boolean open() {
         try {
             conn =  DriverManager.getConnection(CONNECTION, USER, PASSWORD);
@@ -41,7 +40,7 @@ public class Datasource {
     }
 
 
-    // Closing database resource connection
+    // Method tp close database resource connection.
     public void close(){
         try{
             if(conn != null){
@@ -52,6 +51,20 @@ public class Datasource {
             System.out.println("Connection couldn't be closed" + e.getMessage());
         }
     }
+
+    // Methods to Querying DB tables.
+    public List<Artist> queryArtists(){
+        Statement statement = null;
+        ResultSet results = null;
+
+        try{
+
+        }catch(SQLException e){
+            System.out.println("Query failed: " + e.getMessage());
+        }
+
+    }
+
 
 
 
