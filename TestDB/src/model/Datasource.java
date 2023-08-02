@@ -56,10 +56,9 @@ public class Datasource {
     // Methods to Querying DB tables.
     public List<Artist> queryArtists(){
 
-        ResultSet results = null;
 
         try (Statement statement = conn.createStatement()) {
-            results = statement.executeQuery("SELECT * FROM " + TABLE_ARTISTS);
+            ResultSet results = statement.executeQuery("SELECT * FROM " + TABLE_ARTISTS);
 
             List<Artist> artists = new ArrayList<>();
             while (results.next()) {
