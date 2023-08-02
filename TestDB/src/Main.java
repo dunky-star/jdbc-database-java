@@ -20,8 +20,8 @@ public class Main {
             return;
         }
 
-        System.out.println("\nArtists in Our Database");
-        System.out.println("+++++++++++++++++++++++++++++\n");
+        System.out.println("\nARTISTS IN OUR DATABASE");
+        System.out.println("++++++++++++++++++++++++++\n");
         for(Artist artist:artists){
             System.out.println("ID = " + artist.getId() + ", Name = " + artist.getName());
         }
